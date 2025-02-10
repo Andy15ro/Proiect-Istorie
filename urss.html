@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Programul Spațial Sovietic</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: white;
+            color: #333;
+        }
+
+        header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: #8B0000; /* Roșu închis, specific temei sovietice */
+            color: white;
+            padding: 10px 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .logo {
+            height: 50px;
+            width: auto;
+        }
+
+        .nume {
+            font-size: 1.8rem;
+            font-weight: bold;
+            text-align: center;
+            flex-grow: 1;
+        }
+
+        .hamburger {
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            width: 30px;
+            height: 20px;
+        }
+
+        .hamburger div {
+            width: 100%;
+            height: 4px;
+            background-color: white;
+            border-radius: 2px;
+            transition: all 0.3s ease;
+        }
+
+        .hamburger.active div:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+
+        .hamburger.active div:nth-child(2) {
+            opacity: 0;
+        }
+
+        .hamburger.active div:nth-child(3) {
+            transform: rotate(-45deg) translate(5px, -5px);
+        }
+
+        .menu {
+            display: none;
+            background-color: #8B0000;
+            position: absolute;
+            top: 60px;
+            right: 20px;
+            width: 150px;
+            border-radius: 5px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .menu.active {
+            display: block;
+        }
+
+        .menu a {
+            display: block;
+            padding: 10px 15px;
+            color: white;
+            text-decoration: none;
+            font-size: 1rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .menu a:last-child {
+            border-bottom: none;
+        }
+
+        .menu a:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        .mission-container {
+            max-width: 1200px;
+            margin: 50px auto;
+            padding: 0 20px;
+        }
+
+        .mission-card {
+            background: white;
+            border-radius: 15px;
+            margin: 30px 0;
+            padding: 30px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            display: flex;
+            gap: 30px;
+            align-items: center;
+            transition: transform 0.3s ease;
+        }
+
+        .mission-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .mission-image {
+            flex: 1;
+            max-width: 400px;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .mission-image img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        .mission-content {
+            flex: 2;
+            color: #333;
+        }
+
+        .mission-title {
+            color: #8B0000;
+            font-size: 2rem;
+            margin: 0 0 15px 0;
+        }
+
+        .mission-date {
+            color: #B22222;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .mission-description {
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+
+        .mission-facts {
+            background: #FFE4E1;
+            padding: 15px;
+            border-left: 4px solid #8B0000;
+            border-radius: 5px;
+        }
+
+        @media (max-width: 768px) {
+            .mission-card {
+                flex-direction: column;
+                padding: 20px;
+            }
+
+            .mission-image {
+                max-width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="C:\Users\andre\Desktop\HTML istorie\imagini\urssflag.png" class="logo" alt="Logo URSS">
+        <div class="nume"><a href="index.html" style="color: white; text-decoration: none;">Programul Spațial Sovietic</a></div>
+        <div class="hamburger" onclick="toggleMenu(this)">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </header>
+ <div class="menu" id="menu">
+        <a href="C:\Users\andre\Desktop\HTML istorie\html\context.html">Razboiul Rece</a>
+        <a href="C:\Users\andre\Desktop\HTML istorie\html\misiuni.html">Misiuni</a>
+        <a href="C:\Users\andre\Desktop\HTML istorie\html\contact.html">Contact</a>
+    </div>
+
+    <div class="mission-container">
+        <!-- Sputnik 1 -->
+        <div class="mission-card">
+            <div class="mission-image">
+                <img src="C:\Users\andre\Desktop\HTML istorie\imagini\Sputnik1.jpg" alt="Sputnik 1">
+            </div>
+            <div class="mission-content">
+                <h2 class="mission-title">Sputnik 1</h2>
+                <p class="mission-date">4 octombrie 1957</p>
+                <p class="mission-description">
+                    Sputnik 1 a fost primul satelit artificial lansat în spațiu, marcând începutul cursei spațiale. A fost un șoc pentru lumea occidentală, demonstrând superioritatea tehnologică a Uniunii Sovietice.
+                </p>
+                <div class="mission-facts">
+                    <strong>Fapte cheie:</strong><br>
+                    • Primul satelit artificial.<br>
+                    • A declanșat cursa spațială.<br>
+                    • A orbitat Pământul timp de 3 luni.
+                </div>
+            </div>
+        </div>
+
+        <!-- Sputnik 2 -->
+        <div class="mission-card">
+            <div class="mission-image">
+                <img src="C:\Users\andre\Desktop\HTML istorie\imagini\Sputnik2.jpg" alt="Sputnik 2">
+            </div>
+            <div class="mission-content">
+                <h2 class="mission-title">Sputnik 2</h2>
+                <p class="mission-date">3 noiembrie 1957</p>
+                <p class="mission-description">
+                    Sputnik 2 a fost al doilea satelit lansat de URSS și a transportat primul organism viu în spațiu: câinele Laika. Misiunea a demonstrat că viața poate supraviețui în condiții de microgravitație.
+                </p>
+                <div class="mission-facts">
+                    <strong>Fapte cheie:</strong><br>
+                    • Primul organism viu în spațiu.<br>
+                    • Câinele Laika a devenit un simbol al explorării spațiale.<br>
+                    • Misiune fără întoarcere.
+                </div>
+            </div>
+        </div>
+
+        <!-- Luna 1 -->
+        <div class="mission-card">
+            <div class="mission-image">
+                <img src="C:\Users\andre\Desktop\HTML istorie\imagini\Luna1.jpg" alt="Luna 1">
+            </div>
+            <div class="mission-content">
+                <h2 class="mission-title">Luna 1</h2>
+                <p class="mission-date">2 ianuarie 1959</p>
+                <p class="mission-description">
+                    Luna 1 a fost primul obiect creat de om care a ajuns pe orbita Lunii. Deși nu a lovit Luna, a devenit primul obiect care a scăpat de gravitația Pământului.
+                </p>
+                <div class="mission-facts">
+                    <strong>Fapte cheie:</strong><br>
+                    • Primul obiect pe orbita Lunii.<br>
+                    • A demonstrat tehnologia de zbor interplanetar.<br>
+                    • A colectat date despre vântul solar.
+                </div>
+            </div>
+        </div>
+
+    
+
+        <!-- Venera 1 -->
+        <div class="mission-card">
+            <div class="mission-image">
+                <img src="C:\Users\andre\Desktop\HTML istorie\imagini\Venera1.jpg" alt="Venera 1">
+            </div>
+            <div class="mission-content">
+                <h2 class="mission-title">Venera 1</h2>
+                <p class="mission-date">12 februarie 1961</p>
+                <p class="mission-description">
+                    Venera 1 a fost prima misiune sovietică către Venus. Deși contactul s-a pierdut în drum, a demonstrat că zborurile interplanetare sunt posibile.
+                </p>
+                <div class="mission-facts">
+                    <strong>Fapte cheie:</strong><br>
+                    • Prima misiune către Venus.<br>
+                    • A deschis calea pentru explorarea planetei.<br>
+                    • Contact pierdut în drum.
+                </div>
+            </div>
+        </div>
+
+        <!-- Yuri Gagarin - Vostok 1 -->
+        <div class="mission-card">
+            <div class="mission-image">
+                <img src="C:\Users\andre\Desktop\HTML istorie\imagini\Vostok1.jpg" alt="Vostok 1">
+            </div>
+            <div class="mission-content">
+                <h2 class="mission-title">Vostok 1</h2>
+                <p class="mission-date">12 aprilie 1961</p>
+                <p class="mission-description">
+                    Vostok 1 a fost prima misiune care a trimis un om în spațiu. Yuri Gagarin a orbitat Pământul o dată, devenind un erou național și un simbol al explorării spațiale.
+                </p>
+                <div class="mission-facts">
+                    <strong>Fapte cheie:</strong><br>
+                    • Primul om în spațiu.<br>
+                    • Yuri Gagarin, erou al URSS.<br>
+                    • Orbită completă a Pământului.
+                </div>
+            </div>
+        </div>
+
+        <!-- Vostok 2 -->
+        <div class="mission-card">
+            <div class="mission-image">
+                <img src="C:\Users\andre\Desktop\HTML istorie\imagini\Vostok2.jpg" alt="Vostok 2">
+            </div>
+            <div class="mission-content">
+                <h2 class="mission-title">Vostok 2</h2>
+                <p class="mission-date">6 august 1961</p>
+                <p class="mission-description">
+                    Vostok 2 a fost a doua misiune cu echipaj uman, pilotată de Gherman Titov. A stabilit un record de durată a unui zbor orbital, demonstrând că oamenii pot supraviețui în spațiu pentru perioade mai lungi.
+                </p>
+                <div class="mission-facts">
+                    <strong>Fapte cheie:</strong><br>
+                    • Gherman Titov, al doilea cosmonaut.<br>
+                    • Record de durată a zborului orbital.<br>
+                    • Demonstrație de rezistență umană în spațiu.
+                </div>
+            </div>
+        </div>
+
+        <!-- Luna 9 -->
+        <div class="mission-card">
+            <div class="mission-image">
+                <img src="C:\Users\andre\Desktop\HTML istorie\imagini\Luna9.jpg" alt="Luna 9">
+            </div>
+            <div class="mission-content">
+                <h2 class="mission-title">Luna 9</h2>
+                <p class="mission-date">31 ianuarie 1966</p>
+                <p class="mission-description">
+                    Luna 9 a fost prima misiune care a aterizat cu succes pe Lună și a transmis imagini de pe suprafața lunară. A demonstrat că suprafața Lunii este solidă și poate susține o aterizare.
+                </p>
+                <div class="mission-facts">
+                    <strong>Fapte cheie:</strong><br>
+                    • Prima aterizare pe Lună.<br>
+                    • Primele imagini de pe Lună.<br>
+                    • A confirmat soliditatea suprafeței lunare.
+                </div>
+            </div>
+        </div>
+
+        <!-- Soyuz 1 -->
+        <div class="mission-card">
+            <div class="mission-image">
+                <img src="C:\Users\andre\Desktop\HTML istorie\imagini\Soyuz1.jpg" alt="Soyuz 1">
+            </div>
+            <div class="mission-content">
+                <h2 class="mission-title">Soyuz 1</h2>
+                <p class="mission-date">23-24 aprilie 1967</p>
+                <p class="mission-description">
+                    Soyuz 1 a fost prima misiune care a folosit nava Soyuz. A avut un sfârșit tragic, cu prăbușirea capsulei și moartea cosmonautului Vladimir Komarov.
+                </p>
+                <div class="mission-facts">
+                    <strong>Fapte cheie:</strong><br>
+                    • Prima misiune Soyuz.<br>
+                    • Moartea lui Vladimir Komarov.<br>
+                    • A condus la îmbunătățiri majore în siguranță.
+                </div>
+            </div>
+        </div>
+
+        <!-- Zond 5 -->
+        <div class="mission-card">
+            <div class="mission-image">
+                <img src="C:\Users\andre\Desktop\HTML istorie\imagini\Zond5.jpg" alt="Zond 5">
+            </div>
+            <div class="mission-content">
+                <h2 class="mission-title">Zond 5</h2>
+                <p class="mission-date">15-21 septembrie 1968</p>
+                <p class="mission-description">
+                    Zond 5 a fost prima misiune sovietică care a dus un zbor în jurul Lunii cu un echipaj de animale și s-a întors pe Pământ. A demonstrat că zborurile circumlunare sunt posibile.
+                </p>
+                <div class="mission-facts">
+                    <strong>Fapte cheie:</strong><br>
+                    • Zbor circumlunar cu animale.<br>
+                    • Returnare sigură pe Pământ.<br>
+                    • Pregătire pentru misiuni umane.
+                </div>
+            </div>
+        </div>
+
+      
+
+        <!-- Luna 16 -->
+        <div class="mission-card">
+            <div class="mission-image">
+                <img src="C:\Users\andre\Desktop\HTML istorie\imagini\Luna16.jpg" alt="Luna 16">
+            </div>
+            <div class="mission-content">
+                <h2 class="mission-title">Luna 16</h2>
+                <p class="mission-date">12-24 septembrie 1970</p>
+                <p class="mission-description">
+                    Luna 16 a fost prima misiune sovietică care a adus mostre de pe Lună pe Pământ. A demonstrat că explorarea lunară poate fi realizată și fără echipaj uman.
+                </p>
+                <div class="mission-facts">
+                    <strong>Fapte cheie:</strong><br>
+                    • Primele mostre lunare aduse pe Pământ.<br>
+                    • Misiune automată.<br>
+                    • A confirmat tehnologia de returnare a mostrelor.
+                </div>
+            </div>
+        </div>
+
+ 
+     
+
+        <!-- Salyut 1 -->
+        <div class="mission-card">
+            <div class="mission-image">
+                <img src="C:\Users\andre\Desktop\HTML istorie\imagini\Salyut1.jpg" alt="Salyut 1">
+            </div>
+            <div class="mission-content">
+                <h2 class="mission-title">Salyut 1</h2>
+                <p class="mission-date">19 aprilie 1971</p>
+                <p class="mission-description">
+                    Salyut 1 a fost prima stație spațială din lume, lansată de Uniunea Sovietică. A fost folosită pentru cercetări științifice și observații, marcând începutul erei stațiilor spațiale.
+                </p>
+                <div class="mission-facts">
+                    <strong>Fapte cheie:</strong><br>
+                    • Prima stație spațială din lume.<br>
+                    • A găzduit primul echipaj (Soyuz 11).<br>
+                    • A demonstrat posibilitatea vieții pe termen lung în spațiu.
+                </div>
+            </div>
+        </div>
+  <!-- Soyuz 11 -->
+        <div class="mission-card">
+            <div class="mission-image">
+                <img src="C:\Users\andre\Desktop\HTML istorie\imagini\Soyuz11.jpg" alt="Soyuz 11">
+            </div>
+            <div class="mission-content">
+                <h2 class="mission-title">Soyuz 11</h2>
+                <p class="mission-date">6-30 iunie 1971</p>
+                <p class="mission-description">
+                    Soyuz 11 a fost o misiune tragică în care cei trei cosmonauți au murit la întoarcerea pe Pământ din cauza unei despresurizări a capsulei. A fost o lovitură dură pentru programul spațial sovietic.
+                </p>
+                <div class="mission-facts">
+                    <strong>Fapte cheie:</strong><br>
+                    • Moartea celor trei cosmonauți.<br>
+                    • Despresurizarea capsulei.<br>
+                    • A condus la revizuiri majore în siguranță.
+                </div>
+            </div>
+        </div>
+                 <!-- Venera 9 -->
+        <div class="mission-card">
+            <div class="mission-image">
+                <img src="C:\Users\andre\Desktop\HTML istorie\imagini\Venera9.jpg" alt="Venera 9">
+            </div>
+            <div class="mission-content">
+                <h2 class="mission-title">Venera 9</h2>
+                <p class="mission-date">8 iunie 1975</p>
+                <p class="mission-description">
+                    Venera 9 a fost prima misiune care a trimis imagini de pe suprafața Venusului. A aterizat cu succes și a transmis date despre atmosfera și suprafața planetei.
+                </p>
+                <div class="mission-facts">
+                    <strong>Fapte cheie:</strong><br>
+                    • Primele imagini de pe Venus.<br>
+                    • Aterizare cu succes.<br>
+                    • Date despre atmosfera Venusului.
+                </div>
+            </div>
+        </div
+         <!-- Soyuz-Apollo -->
+        <div class="mission-card">
+            <div class="mission-image">
+                <img src="C:\Users\andre\Desktop\HTML istorie\imagini\SoyuzApollo.jpg" alt="Soyuz-Apollo">
+            </div>
+            <div class="mission-content">
+                <h2 class="mission-title">Soyuz-Apollo</h2>
+                <p class="mission-date">15-24 iulie 1975</p>
+                <p class="mission-description">
+                    Misiunea Soyuz-Apollo, cunoscută și sub numele de "Apollo-Soyuz Test Project" (ASTP), a fost prima colaborare internațională în spațiu între Statele Unite și Uniunea Sovietică. Această misiune a avut ca scop testarea tehnologiilor de andocare între navele spațiale Soyuz și Apollo, precum și promovarea cooperării între cele două superputeri în timpul Războiului Rece. Echipajul american a fost format din Thomas Stafford, Vance Brand și Donald Slayton, iar cel sovietic din Alexei Leonov și Valeri Kubasov.
+                </p>
+                <div class="mission-facts">
+                    <strong>Fapte cheie:</strong><br>
+                    • Prima colaborare internațională în spațiu.<br>
+                    • Andocarea dintre Soyuz și Apollo.<br>
+                    • Simbol al detentei în Războiul Rece.<br>
+                    • Echipaj mixt: 3 americani și 2 sovietici.<br>
+                    • A deschis calea pentru cooperări viitoare, cum ar fi Stația Spațială Internațională (ISS).
+                </div>
+            </div>
+        </div>
+
+    <script>
+        function toggleMenu(element) {
+            element.classList.toggle("active");
+            document.getElementById("menu").classList.toggle("active");
+        }
+    </script>
+</body>
+</html>
