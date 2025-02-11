@@ -5,17 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
     <title>Cursa Spatiala</title>
     <style>
-        body {
+          body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
             background: white;
             background-size: cover;
             color: #333;
-            
         }
 
-          header {
+        header {
             display: flex;
             align-items: center;
             justify-content: space-between;
@@ -23,6 +22,8 @@
             color: white;
             padding: 10px 20px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            position: relative;
+            z-index: 1001; /* Asigură că header-ul este deasupra */
         }
 
         .logo {
@@ -76,6 +77,7 @@
             width: 150px;
             border-radius: 5px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            z-index: 1000; /* Meniul este deasupra căsuței de text */
         }
 
         .menu.active {
@@ -98,29 +100,19 @@
         .menu a:hover {
             background-color: rgba(255, 255, 255, 0.1);
         }
-            .caseta-text {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            background-color: #f0f0f0;
-            padding: 30px 50px ;
-            border-radius: 15px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-            text-align: left;
-            max-width: 600px;
-            width: 80%;
-        }
+
         .caseta-text {
             background-color: white;
             padding: 40px;
-            margin: 50px auto;
+            margin: 100px auto 50px; /* Ajustați marginea superioară */
             border-radius: 15px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             max-width: 800px;
             text-align: justify;
             line-height: 1.8;
             color: #01257D;
+            position: relative;
+            z-index: 1; /* Căsuța de text este sub meniu */
         }
 
         .caseta-text h2 {
@@ -138,6 +130,7 @@
         @media (max-width: 768px) {
             .caseta-text {
                 padding: 20px;
+                margin-top: 150px; /* Ajustați marginea superioară pentru dispozitive mobile */
             }
 
             .caseta-text p {
@@ -145,19 +138,7 @@
             }
         }
 
-      
-    
-        @media (max-width: 768px) {
-            .caseta-text {
-                padding: 20px 25px 20px 15px;
-            }
-            .caseta-text p {
-                text-indent: 1em;
-                font-size: 1rem;
-            }
-        }
-
-           .titlu-caseta {
+        .titlu-caseta {
             color: #055fb3;
             font-size: 2rem;
             margin: 0 0 20px 0;
@@ -168,12 +149,11 @@
             font-family: 'Arial', sans-serif;
         }
 
-       .logo {
+        .logo {
             height: 50px; 
             width: auto;
             margin-right: 10px;
         }
-
     </style>
 </head>
 <body>
